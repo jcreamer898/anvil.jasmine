@@ -1,0 +1,6 @@
+{
+    "anvil.jasmine": {
+        "specDir": "spec",
+        "coffee": false
+    }
+}

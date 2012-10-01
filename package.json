@@ -1,0 +1,25 @@
+{
+  "name": "anvil.jasmine",
+  "version": "0.0.1",
+  "description": "A jasmine test runner for anvil.js",
+  "main": "lib/plugin.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jcreamer898/anvil.jasmine.git"
+  },
+  "keywords": [
+    "anvil",
+    "jasmine",
+    "tests",
+    "javascript",
+    "unit",
+    "tests",
+    "jasmine",
+    "test"
+  ],
+  "author": "Jonathan Creamer",
+  "license": "MIT",
+  "dependencies": {
+    "jasmine-node": "~1.0.0"
+  }
+}

@@ -1,0 +1,197 @@
+{
+    "activityOrder": [
+        "identify",
+        "pull",
+        "combine",
+        "pre-process",
+        "compile",
+        "post-process",
+        "push",
+        "test"
+    ],
+    "working": "C:\\Users\\Jonathan\\AppendTo\\Internal\\anvil\\anvil.jasmine\\.anvil\\tmp",
+    "source": "C:\\Users\\Jonathan\\AppendTo\\Internal\\anvil\\anvil.jasmine\\src",
+    "spec": "C:\\Users\\Jonathan\\AppendTo\\Internal\\anvil\\anvil.jasmine\\spec",
+    "output": "./lib",
+    "tasks": "./tasks",
+    "log": {
+        "debug": false,
+        "event": true,
+        "step": true,
+        "complete": true,
+        "warning": false,
+        "error": true
+    },
+    "anvil.headers": {
+        "header": ""
+    },
+    "anvil.identify": {
+        "continuous": false,
+        "watchPaths": [
+            "C:\\Users\\Jonathan\\AppendTo\\Internal\\anvil\\anvil.jasmine\\src",
+            "C:\\Users\\Jonathan\\AppendTo\\Internal\\anvil\\anvil.jasmine\\spec"
+        ],
+        "ignore": [
+            {},
+            {},
+            {}
+        ]
+    },
+    "anvil.token": {
+        "tokens": [
+            {
+                "find": "/[{]{3}([^}]*)[}]{3}/g",
+                "replace": "/[{]{3}replace[}]{3}/g"
+            }
+        ],
+        "packageData": {
+            "name": "anvil.jasmine",
+            "version": "0.0.1",
+            "description": "A jasmine test runner for anvil.js",
+            "main": "index.js",
+            "scripts": {
+                "test": "echo \"Error: no test specified\" && exit 1"
+            },
+            "repository": {
+                "type": "git",
+                "url": "git://github.com/jcreamer898/anvil.jasmine.git"
+            },
+            "keywords": [
+                "anvil",
+                "jasmine",
+                "tests",
+                "javascript",
+                "unit",
+                "tests",
+                "jasmine",
+                "test"
+            ],
+            "author": "Jonathan Creamer",
+            "license": "MIT",
+            "dependencies": [
+                {
+                    "jasmine-node": "~1.0.0"
+                }
+            ]
+        },
+        "sourceData": {
+            "name": "anvil.jasmine",
+            "version": "0.0.1",
+            "description": "A jasmine test runner for anvil.js",
+            "main": "index.js",
+            "scripts": {
+                "test": "echo \"Error: no test specified\" && exit 1"
+            },
+            "repository": {
+                "type": "git",
+                "url": "git://github.com/jcreamer898/anvil.jasmine.git"
+            },
+            "keywords": [
+                "anvil",
+                "jasmine",
+                "tests",
+                "javascript",
+                "unit",
+                "tests",
+                "jasmine",
+                "test"
+            ],
+            "author": "Jonathan Creamer",
+            "license": "MIT",
+            "dependencies": [
+                {
+                    "jasmine-node": "~1.0.0"
+                }
+            ]
+        }
+    },
+    "anvil.transform": {
+        "compilers": {
+            ".less": {
+                "name": "anvil.less",
+                "activity": "",
+                "dependencies": [],
+                "commander": [],
+                "config": {
+                    "options": {}
+                }
+            },
+            ".md": {
+                "name": "anvil.markdown",
+                "activity": "pull",
+                "dependencies": [],
+                "commander": [],
+                "config": {}
+            }
+        }
+    },
+    "anvil.combiner": {
+        "patterns": [
+            {
+                "extensions": [
+                    ".html"
+                ],
+                "find": "/[<][!][-]{2}.?import[(]?.?[\"'].*[\"'].?[)]?.?[-]{2}[>]/g",
+                "replace": "/([ \t]*)[<][!][-]{2}.?import[(]?.?[\"']replace[\"'].?[)]?.?[-]{2}[>]/g"
+            },
+            {
+                "extensions": [
+                    ".js"
+                ],
+                "find": "/([/]{2}|[/][*]).?import.?[(]?.?[\"'].*[\"'].?[)]?[;]?.*?(\n[*][/])?/g",
+                "replace": "/([ \t]*)([/]{2}|[/][*]).?import.?[(]?.?[\"']replace[\"'].?[)]?[;]?.*?(\n[*][/])?/g"
+            },
+            {
+                "extensions": [
+                    ".css"
+                ],
+                "find": "/([/]{2}|[/][*]).?import[(]?.?[\"'].*[\"'].?[)]?([*][/])?/g",
+                "replace": "/([ \t]*)([/]{2}|[/][*]).?import[(]?.?[\"']replace[\"'].?[)]?([*][/])?/g"
+            },
+            {
+                "extensions": [
+                    ".yaml",
+                    ".yml",
+                    ".json"
+                ],
+                "alternateExtensions": [
+                    ".*"
+                ],
+                "find": "/([ \t]*)[-][ ]?import[:][ ]*[\"'].*[\"']/g",
+                "replace": "/([ \t]*)[-][ ]?import[:][ ]*[\"']replace[\"']/g"
+            },
+            {
+                "extensions": [
+                    ".less"
+                ],
+                "alternateExtensions": [
+                    ".css"
+                ],
+                "find": "/([@]).?import[(]?.?[\"'].*[\"'].?[)]?/g",
+                "replace": "/([ \t]*)([@]).?import[(]?.?[\"']replace[\"'].?[)]?/g"
+            }
+        ]
+    },
+    "anvil.less": {
+        "options": {}
+    },
+    "anvil.http": {
+        "contentTypes": {
+            ".coffee": "application/javascript",
+            ".js": "application/javascript",
+            ".less": "text/css",
+            ".styl": "text/css",
+            ".sass": "text/css",
+            ".scss": "text/css",
+            ".md": "text/html",
+            ".markdown": "text/html",
+            ".haml": "text/html",
+            ".jade": "text/html"
+        },
+        "port": 3080,
+        "browser": false,
+        "paths": {
+            "/": "./lib"
+        }
+    }
+}
