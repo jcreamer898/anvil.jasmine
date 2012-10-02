@@ -32,7 +32,7 @@ To have the tests run with every `anvil` run, add the following to your `build.j
 
 Here are the default config values for `anvil.jasmine`...
 
-```json
+```js
 config: {
     specDir: "spec",
     verbose: false,
