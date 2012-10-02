@@ -1,6 +1,7 @@
 {
     "anvil.jasmine": {
         "specDir": "spec",
-        "coffee": false
+        "coffee": false,
+        "alwaysRun": true
     }
 }

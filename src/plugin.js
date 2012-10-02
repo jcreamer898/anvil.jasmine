@@ -22,12 +22,13 @@ var pluginFactory = function( _, anvil ) {
             teamCity: false,
             requireJs: false,
             coffee: false,
-            jUnitSupport: false
+            jUnitSupport: false,
+            alwaysRun: false
         },
         // Configure the plugin.
         configure: function( config, command, done ) {
             // If there is a config for jasmine or if the jasmine command is present.
-            this.shouldTest = ( command.jasmine || !!this.config.specDir ) &&
+            this.shouldTest = ( command.jasmine || !!this.config.alwaysRun ) &&
                 anvil.fs.pathExists( this.config.specDir );
 
             done();
