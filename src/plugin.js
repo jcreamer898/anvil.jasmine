@@ -14,6 +14,7 @@ var pluginFactory = function( _, anvil ) {
         commander: [
             [ "-j, --jasmine", "Run this plugin for testing with jasmine." ]
         ],
+        // The default options.
         config: {
             specDir: "spec",
             verbose: false,
@@ -26,13 +27,13 @@ var pluginFactory = function( _, anvil ) {
         // Configure the plugin.
         configure: function( config, command, done ) {
             // If there is a config for jasmine or if the jasmine command is present.
-            this.shouldTest = command.jasmine || !_.isEmpty( this.config );
+            this.shouldTest = ( command.jasmine || !!this.config.specDir ) &&
+                anvil.fs.pathExists( this.config.specDir );
 
             done();
         },
         // Execute the tests
         run: function( done ) {
-
             if ( this.shouldTest ) {
                 try {
                     // Run the tests.
@@ -43,7 +44,9 @@ var pluginFactory = function( _, anvil ) {
                         this.config.showColors,     // colors
                         this.config.teamCity,       // teamCity
                         this.config.requireJs,      // requireJs
-                        this.config.coffee ? new RegExp(".(coffee|js)$", "i") : new RegExp(".(js)$", "i"),        // matcher
+                        this.config.coffee ?        // matcher
+                            new RegExp(".(coffee|js)$", "i") :
+                            new RegExp(".(js)$", "i"),
                         this.config.jUnitSupport    // jUnit
                     );
                 }
