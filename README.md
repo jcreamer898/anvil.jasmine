@@ -1,6 +1,6 @@
 anvil.jasmine
 =============
-This plugin for anvil will run [jasmine.js](http://pivotal.github.com/jasmine/) tests.  
+This plugin for anvil will run [jasmine.js](https://jasmine.github.io/) tests.  
 
 The test directory by convention will be the `spec` directory.  
 
